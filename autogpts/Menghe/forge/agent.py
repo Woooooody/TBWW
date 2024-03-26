@@ -91,8 +91,6 @@ class ForgeAgent(Agent):
         )
         return task
 
-
-
     async def execute_step(self, task_id: str, step_request: StepRequestBody) -> Step:
         """
         For a tutorial on how to add your own logic please see the offical tutorial series:
@@ -136,14 +134,13 @@ class ForgeAgent(Agent):
             agent_created=True,
         )
 
-        step.output = "This my first aget: " + str(step_request)
+        step.output = "Washington D.C"
 
-
-        # LOG.info(
-        #     f"\t✅ Final Step completed: {step.step_id}. \n"
-        #     + f"Output should be placeholder text Washington D.C. You'll need to \n"
-        #     + f"modify execute_step to include LLM behavior. Follow the tutorial "
-        #     + f"if confused. "
-        # )
+        LOG.info(
+            f"\t✅ Final Step completed: {step.step_id}. \n"
+            + f"Output should be placeholder text Washington D.C. You'll need to \n"
+            + f"modify execute_step to include LLM behavior. Follow the tutorial "
+            + f"if confused. "
+        )
 
         return step
